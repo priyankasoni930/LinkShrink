@@ -83,7 +83,6 @@ const Page = () => {
                         <span>{isLoading ? "Shrinking..." : "Shrink"}</span>
                     </button>
                 </div>
-
                 {isUrlGenerated && (
                     <div className="w-full bg-slate-400 backdrop-blur-sm rounded-lg p-6 space-y-4 shadow-lg border border-gray-400">
                         <div className="flex justify-between items-center">
@@ -93,9 +92,10 @@ const Page = () => {
                         <p className="text-lg break-all text-gray-600">
                             {process.env.NEXT_PUBLIC_APP_URL || "https://link-shrink-snowy.vercel.app"}/{("data" in response && response.data.shortUrl) || ""}
                         </p>
-                       <div className="flex justify-end space-x-4">
-                                {isCopied ? <Copy className="text-green-600" /> : <Clipboard onClick={copyToClipboard} className="cursor-pointer text-black-500 hover:text-gray-700 transition-colors" />}
-                                <ShareBtn url={`${process.env.NEXT_PUBLIC_APP_URL || "https://trim.theshiva.xyz"}/${response?.data?.shortUrl || ""}`} />
+                        <div className="flex justify-end space-x-4">
+                            {isCopied ? <Copy className="text-green-600" /> : <Clipboard onClick={copyToClipboard} className="cursor-pointer text-black-500 hover:text-gray-700 transition-colors" />}
+                            <ShareBtn url={`${process.env.NEXT_PUBLIC_APP_URL || "https://link-shrink-snowy.vercel.app"}/${("data" in response && response.data.shortUrl) || ""}`} />
+                        </div>
                     </div>
                 )}
 
