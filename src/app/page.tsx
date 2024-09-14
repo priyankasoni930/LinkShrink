@@ -94,7 +94,7 @@ const Page = () => {
                         </p>
                         <div className="flex justify-end space-x-4">
                             {isCopied ? <Copy className="text-green-600" /> : <Clipboard onClick={copyToClipboard} className="cursor-pointer text-black-500 hover:text-gray-700 transition-colors" />}
-                            <ShareBtn url={`${process.env.NEXT_PUBLIC_APP_URL || "https://link-shrink-snowy.vercel.app"}/${("data" in response && response.data.shortUrl) || ""}`} />
+                            <ShareBtn url={`${process.env.NEXT_PUBLIC_APP_URL || "https://link-shrink-snowy.vercel.app"}/${("data" in response && response.data.shortUrl) || ""}`} className="cursor-pointer text-black-500 hover:text-gray-700 transition-colors"  />
                         </div>
                     </div>
                 )}
