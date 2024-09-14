@@ -54,7 +54,7 @@ const Page = () => {
     const copyToClipboard = async () => {
         try {
             if ("data" in response) {
-                await navigator.clipboard.writeText(`${process.env.NEXT_PUBLIC_APP_URL || "https://trim.theshiva.xyz"}/${response.data.shortUrl || ""}`);
+                await navigator.clipboard.writeText(`${process.env.NEXT_PUBLIC_APP_URL || "https://link-shrink-snowy.vercel.app/"}/${response.data.shortUrl || ""}`);
                 setIsCopied(true);
                 Toast.SuccessshowToast("URL Copied to Clipboard");
                 setTimeout(() => {
