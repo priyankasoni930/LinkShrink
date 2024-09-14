@@ -93,10 +93,12 @@ const Page = () => {
                         <p className="text-lg break-all text-gray-600">
                             {process.env.NEXT_PUBLIC_APP_URL || "https://link-shrink-snowy.vercel.app"}/{("data" in response && response.data.shortUrl) || ""}
                         </p>
-                        <div className="flex justify-end space-x-4">
-                            {isCopied ? <Copy className="text-green-600" /> : <Clipboard onClick={copyToClipboard} className="cursor-pointer text-gray-500 hover:text-gray-700 transition-colors" />}
-                            <ShareBtn url={`${process.env.NEXT_PUBLIC_APP_URL || "https://link-shrink-snowy.vercel.app/"}/${("data" in response && response.data.shortUrl) || ""}`} />
-                        </div>
+                       <ShareBtn url={`${process.env.NEXT_PUBLIC_APP_URL || "https://link-shrink-snowy.vercel.app/"}/${response.data.shortUrl}`}>
+                                <button className="flex items-center space-x-2 px-4 py-2 rounded-full bg-blue-500 hover:bg-blue-600 transition-colors text-white">
+                                    <Share2 className="w-5 h-5" />
+                                    <span>Share</span>
+                                </button>
+                            </ShareBtn>
                     </div>
                 )}
 
