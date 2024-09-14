@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.animate-gradient {
+    background-size: 300%;
+    -webkit-animation: animatedgradient 6s ease infinite alternate;
+    -moz-animation: animatedgradient 6s ease infinite alternate;
+    animation: animatedgradient 6s ease infinite alternate;
+}
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#Btn-NumOfClicks {
+    transition: 0.2s ease-in-out;
+}
+
+#Btn-NumOfClicks:hover {
+    scale: 1.04;
+    border: 0.5px solid rgba(216, 211, 211, 0.641);
+}
+
+#Btn-Search {
+    transition: 0.2s ease-in-out;
+    border: 1px solid transparent;
+}
+
+#Btn-Search:hover {
+    scale: 1.04;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    box-shadow: 15px 15px rgb(50, 50, 50);
+}
