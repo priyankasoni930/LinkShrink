@@ -1,6 +1,6 @@
 
 ```bash
-git clone 
+git clone https://github.com/priyankasoni930/LinkShrink.git
 ```
 ```bash
 cd LinkShrink
