@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import axios from "axios";
-import { Clipboard, Copy, Gauge, Share2, MousePointerClick, X } from "lucide-react";
+import { Clipboard, Copy, Gauge, MousePointerClick, X } from "lucide-react";
 import Link from "next/link";
 
 import ShareBtn from "@/components/ShareBtn";
@@ -93,12 +93,9 @@ const Page = () => {
                         <p className="text-lg break-all text-gray-600">
                             {process.env.NEXT_PUBLIC_APP_URL || "https://link-shrink-snowy.vercel.app"}/{("data" in response && response.data.shortUrl) || ""}
                         </p>
-                       <ShareBtn url={`${process.env.NEXT_PUBLIC_APP_URL || "https://link-shrink-snowy.vercel.app"}/{("data" in response && response.data.shortUrl) || ""}`}>
-                                <button className="flex items-center space-x-2 px-4 py-2 rounded-full bg-black-500 hover:bg-black-600 transition-colors text-white">
-                                    <Share2 className="w-5 h-5" />
-                                    <span>Share</span>
-                                </button>
-                            </ShareBtn>
+                       <div className="flex justify-end space-x-4">
+                                {isCopied ? <Copy className="text-green-600" /> : <Clipboard onClick={copyToClipboard} className="cursor-pointer text-black-500 hover:text-gray-700 transition-colors" />}
+                                <ShareBtn url={`${process.env.NEXT_PUBLIC_APP_URL || "https://trim.theshiva.xyz"}/${response?.data?.shortUrl || ""}`} />
                     </div>
                 )}
 
