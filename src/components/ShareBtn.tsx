@@ -34,7 +34,7 @@ const ShareBtn = ({ url }: { url: string }): JSX.Element => {
     }
   };
 
-  return <Share onClick={handleShareClick} className=" cursor-pointer" />;
+  return <Share onClick={handleShareClick} className=" cursor-pointer  text-gray-700 hover:text-gray-900 transition-colors" />;
 };
 
 export default ShareBtn;
