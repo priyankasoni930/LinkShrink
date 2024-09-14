@@ -93,7 +93,7 @@ const Page = () => {
                         <p className="text-lg break-all text-gray-600">
                             {process.env.NEXT_PUBLIC_APP_URL || "https://link-shrink-snowy.vercel.app"}/{("data" in response && response.data.shortUrl) || ""}
                         </p>
-                       <ShareBtn url={`${process.env.NEXT_PUBLIC_APP_URL || "https://link-shrink-snowy.vercel.app/"}/${response.data.shortUrl}`}>
+                       <ShareBtn url={`${process.env.NEXT_PUBLIC_APP_URL || "https://link-shrink-snowy.vercel.app"}/${response.data.shortUrl}`}>
                                 <button className="flex items-center space-x-2 px-4 py-2 rounded-full bg-black-500 hover:bg-black-600 transition-colors text-white">
                                     <Share2 className="w-5 h-5" />
                                     <span>Share</span>
