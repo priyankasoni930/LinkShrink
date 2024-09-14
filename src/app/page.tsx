@@ -91,11 +91,11 @@ const Page = () => {
                             <X onClick={() => setIsUrlGenerated(false)} className="cursor-pointer text-gray-500 hover:text-gray-700 transition-colors" />
                         </div>
                         <p className="text-lg break-all text-gray-600">
-                            {process.env.NEXT_PUBLIC_APP_URL || "https://trim.theshiva.xyz"}/{response?.data?.shortUrl || ""}
+                            {process.env.NEXT_PUBLIC_APP_URL || "https://trim.theshiva.xyz"}/{("data" in response && response.data.shortUrl) || ""}
                         </p>
                         <div className="flex justify-end space-x-4">
                             {isCopied ? <Copy className="text-green-600" /> : <Clipboard onClick={copyToClipboard} className="cursor-pointer text-gray-500 hover:text-gray-700 transition-colors" />}
-                            <ShareBtn url={`${process.env.NEXT_PUBLIC_APP_URL || "https://trim.theshiva.xyz"}/${response?.data?.shortUrl || ""}`} />
+                            <ShareBtn url={`${process.env.NEXT_PUBLIC_APP_URL || "https://trim.theshiva.xyz"}/${("data" in response && response.data.shortUrl) || ""}`} />
                         </div>
                     </div>
                 )}
