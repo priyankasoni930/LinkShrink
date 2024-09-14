@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import axios from "axios";
-import { motion } from "framer-motion";
 import { ArrowLeft, Search } from "lucide-react";
 import Link from "next/link";
 
@@ -38,7 +37,7 @@ const Page = () => {
                 <span>Back</span>
             </Link>
 
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex flex-col items-center justify-center mt-10 w-full max-w-2xl mx-auto z-10">
+            <div className="flex flex-col items-center justify-center mt-10 w-full max-w-2xl mx-auto z-10">
                 <div className="w-full space-y-6">
                     <label htmlFor="shortId" className="relative w-full block">
                         <input type="text" id="shortId" onChange={(e) => setShortId(e.target.value)} className="w-full px-6 py-4 rounded-lg bg-white/80 backdrop-blur-sm border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 transition text-gray-700" placeholder="Enter Your ShortId" />
@@ -52,18 +51,18 @@ const Page = () => {
                 </div>
 
                 {renderClickDiv ? (
-                    <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="w-full mt-8 p-6 bg-white/90 backdrop-blur-sm rounded-lg shadow-lg border border-gray-200 flex items-center justify-center">
+                    <div className="w-full mt-8 p-6 bg-white/90 backdrop-blur-sm rounded-lg shadow-lg border border-gray-200 flex items-center justify-center">
                         <h1 className="text-3xl font-bold text-gray-800">
                             Total Clicks: <span className="text-blue-600">{data?.data || 0}</span>
                         </h1>
-                    </motion.div>
+                    </div>
                 ) : (
-                    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="w-full mt-8 p-6 bg-white/90 backdrop-blur-sm rounded-lg shadow-lg border border-gray-200">
+                    <div className="w-full mt-8 p-6 bg-white/90 backdrop-blur-sm rounded-lg shadow-lg border border-gray-200">
                         <h2 className="text-2xl font-semibold text-gray-800 mb-4">What is ShortId?</h2>
                         <p className="text-gray-600 mb-4">The ShortId is the last 7 characters at the end of your shortened URL.</p>
-                    </motion.div>
+                    </div>
                 )}
-            </motion.div>
+            </div>
         </div>
     );
 };

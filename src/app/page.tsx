@@ -1,8 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import axios from "axios";
-import { motion } from "framer-motion";
-import { Clipboard, Copy, Gauge, Heart, MousePointerClick, X } from "lucide-react";
+import { Clipboard, Copy, Gauge, MousePointerClick, X } from "lucide-react";
 import Link from "next/link";
 
 import ShareBtn from "@/components/ShareBtn";
@@ -70,7 +69,7 @@ const Page = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-500 via-gray-400 to-gray-700 text-gray-400 flex flex-col items-center justify-center p-4">
             <div className="absolute inset-0 bg-gradient-to-br from-gray-400/10 via-gray-300/10 to-gray-200/10"></div>
-            <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="w-full max-w-4xl mx-auto flex flex-col items-center space-y-10 relative z-10">
+            <section className="w-full max-w-4xl mx-auto flex flex-col items-center space-y-10 relative z-10">
                 <h1 className="text-5xl md:text-7xl font-extrabold text-center text-gray-800 drop-shadow-sm">
                     {" "}
                     <span className="text-3xl font-bold">LinkShrink... </span>
@@ -86,7 +85,7 @@ const Page = () => {
                 </div>
 
                 {isUrlGenerated && (
-                    <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="w-full bg-slate-400 backdrop-blur-sm rounded-lg p-6 space-y-4 shadow-lg border border-gray-400">
+                    <div className="w-full bg-slate-400 backdrop-blur-sm rounded-lg p-6 space-y-4 shadow-lg border border-gray-400">
                         <div className="flex justify-between items-center">
                             <h2 className="text-xl font-semibold text-gray-700">Your Shortened URL</h2>
                             <X onClick={() => setIsUrlGenerated(false)} className="cursor-pointer text-gray-500 hover:text-gray-700 transition-colors" />
@@ -96,16 +95,16 @@ const Page = () => {
                         </p>
                         <div className="flex justify-end space-x-4">
                             {isCopied ? <Copy className="text-green-600" /> : <Clipboard onClick={copyToClipboard} className="cursor-pointer text-gray-500 hover:text-gray-700 transition-colors" />}
-                            {response?.data && <ShareBtn url={`${process.env.NEXT_PUBLIC_APP_URL || "https://trim.theshiva.xyz"}/${response?.data?.shortUrl || ""}`} />}
+                            <ShareBtn url={`${process.env.NEXT_PUBLIC_APP_URL || "https://trim.theshiva.xyz"}/${response?.data?.shortUrl || ""}`} />
                         </div>
-                    </motion.div>
+                    </div>
                 )}
 
                 <Link href="/clicks" className="group flex items-center space-x-2 px-6 py-3 rounded-full bg-gradient-to-r from-gray-200 to-gray-300 hover:from-gray-300 hover:to-gray-400 transition-all duration-300 shadow-md text-gray-700">
                     <MousePointerClick className="w-5 h-5 group-hover:text-gray-900 transition-colors" />
                     <span>Get Number of Clicks</span>
                 </Link>
-            </motion.section>
+            </section>
 
             <footer className="mt-auto py-4 text-center text-gray-600"></footer>
         </div>
