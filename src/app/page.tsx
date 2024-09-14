@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import axios from "axios";
-import { Clipboard, Copy, Gauge, MousePointerClick, X } from "lucide-react";
+import { Clipboard, Copy, Gauge, Share2, MousePointerClick, X } from "lucide-react";
 import Link from "next/link";
 
 import ShareBtn from "@/components/ShareBtn";
