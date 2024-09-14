@@ -83,7 +83,7 @@ const Page = () => {
                         <span>{isLoading ? "Shrinking..." : "Shrink"}</span>
                     </button>
                 </div>
-                {isUrlGenerated && (
+               {isUrlGenerated && (
                     <div className="w-full bg-slate-400 backdrop-blur-sm rounded-lg p-6 space-y-4 shadow-lg border border-gray-400">
                         <div className="flex justify-between items-center">
                             <h2 className="text-xl font-semibold text-gray-700">Your Shortened URL</h2>
@@ -93,11 +93,21 @@ const Page = () => {
                             {process.env.NEXT_PUBLIC_APP_URL || "https://link-shrink-snowy.vercel.app"}/{("data" in response && response.data.shortUrl) || ""}
                         </p>
                         <div className="flex justify-end space-x-4">
-                            {isCopied ? <Copy className="text-green-600" /> : <Clipboard onClick={copyToClipboard} className="cursor-pointer text-black-500 hover:text-gray-700 transition-colors" />}
-                            <ShareBtn url={`${process.env.NEXT_PUBLIC_APP_URL || "https://link-shrink-snowy.vercel.app"}/${("data" in response && response.data.shortUrl) || ""}`} />
+                            {isCopied ? (
+                                <Copy className="text-green-600" />
+                            ) : (
+                                <Clipboard
+                                    onClick={copyToClipboard}
+                                    className="cursor-pointer text-gray-700 hover:text-gray-900 transition-colors"
+                                />
+                            )}
+                            <ShareBtn
+                                url={`${process.env.NEXT_PUBLIC_APP_URL || "https://link-shrink-snowy.vercel.app"}/${("data" in response && response.data.shortUrl) || ""}`}
+                            />
                         </div>
                     </div>
                 )}
+
 
                 <Link href="/clicks" className="group flex items-center space-x-2 px-6 py-3 rounded-full bg-gradient-to-r from-gray-200 to-gray-300 hover:from-gray-300 hover:to-gray-400 transition-all duration-300 shadow-md text-gray-700">
                     <MousePointerClick className="w-5 h-5 group-hover:text-gray-900 transition-colors" />
