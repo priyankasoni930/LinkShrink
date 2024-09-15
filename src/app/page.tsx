@@ -86,7 +86,7 @@ const Page = () => {
                {isUrlGenerated && (
                     <div className="w-full bg-slate-400 backdrop-blur-sm rounded-lg p-6 space-y-4 shadow-lg border border-gray-400">
                         <div className="flex justify-between items-center">
-                            <h2 className="text-xl font-semibold text-gray-700">Your Shortened URL</h2>
+                            <h2 className="text-xl font-semibold text-gray-700">Your Shrinked URL</h2>
                             <X onClick={() => setIsUrlGenerated(false)} className="cursor-pointer text-gray-500 hover:text-gray-700 transition-colors" />
                         </div>
                         <p className="text-lg break-all text-gray-600">
