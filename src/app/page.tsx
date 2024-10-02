@@ -77,7 +77,7 @@ const Page = () => {
                 </h1>
 
                 <div className="w-full flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
-                    <input type="text" onChange={(e) => setLongUrl(e.target.value)} placeholder="Enter the URL to shorten" className="w-full md:flex-1 px-6 py-4 rounded-full bg-white/80 backdrop-blur-sm border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 transition placeholder-gray-400 text-gray-700" />
+                    <input type="text" onChange={(e) => setLongUrl(e.target.value)} placeholder="Enter the URL to shrink" className="w-full md:flex-1 px-6 py-4 rounded-full bg-white/80 backdrop-blur-sm border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 transition placeholder-gray-400 text-gray-700" />
                     <button onClick={handleSubmit} className="w-full md:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-gray-700 to-gray-900 text-white hover:from-gray-800 hover:to-gray-950 transition-all duration-300 flex items-center justify-center space-x-2 font-semibold shadow-md">
                         <Gauge className="w-5 h-5" />
                         <span>{isLoading ? "Shrinking..." : "Shrink"}</span>
